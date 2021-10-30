@@ -1,0 +1,27 @@
+<%= form_with(model: nombre_modelo) do |form| %>
+  <% if nombre_modelo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(nombre_modelo.errors.count, "error") %> prohibited this nombre_modelo from being saved:</h2>
+
+      <ul>
+        <% nombre_modelo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :campo1 %>
+    <%= form.text_field :campo1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :campo2 %>
+    <%= form.number_field :campo2 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
